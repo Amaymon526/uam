@@ -1,0 +1,60 @@
+server:
+  port: 8080
+  host: localhost
+  server.forward-headers-strategy: true
+  servlet:
+    context-path: /project
+  tomcat:
+    max-http-post-size: 600000000
+    max-swallow-size: 600000000
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 60MB
+      max-request-size: 60MB
+  application:
+    name: PROJECT
+  data:
+    mongodb:
+      auto-index-creation: true
+      database: wtm
+      port: 27017
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: false
+management:
+  health:
+    elasticsearch:
+      enabled: true
+    mail:
+      enabled: false
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+springdoc:
+  api-docs:
+    groups:
+      enabled: true
+    enabled: true
+  swagger-ui:
+    operations-sorter: alpha
+    tags-sorter: alpha
+    deep-linking: true
+    defaultModelsExpandDepth: 5
+    showExtensions: true
+    showCommonExtensions: true
+    path: /swagger-ui.html
+#  use-fqn: true
+  writer-with-default-pretty-printer: true
+  writer-with-order-by-keys: true

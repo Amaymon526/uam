@@ -1,0 +1,31 @@
+pom.xml.versionsBackup
+npm-debug.log.*
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+build/
+dist/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+node/
+node_modules/
+
+varias-customer-app/src/main/resources/application-local.yml

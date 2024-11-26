@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@angular/animations": "^15.0.4",
+    "@auth0/auth0-angular": "^1.11.1"
+  }
+}

@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  border: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill);
+  grid-gap: 0px;
+  background-color: #20262e;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.cards {
+  border: none;
+  border-radius: 18px;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.cards img {
+  border-radius: 18px;
+}
+
+.size {
+  margin: 10px;
+}
+

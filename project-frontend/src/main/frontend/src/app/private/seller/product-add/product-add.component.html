@@ -1,0 +1,13 @@
+<div class="input-ui">
+  <form #myForm="ngForm" novalidate>
+    <li><label>Product Name</label></li>
+    <li><input required id="name" type="text" name="product.name" [(ngModel)]="product.productName"></li>
+    <li><label>Description</label></li>
+    <li><input required type="text" name="product.description" [(ngModel)]="product.productDescription"/></li>
+    <li><label>Price</label></li>
+
+    <!--[disabled]="myForm.valid"-->
+    <p-button  labe="Save"(click)="save()" routerLink="/project/admin/user/new">Save</p-button>
+  </form>
+</div>
+
