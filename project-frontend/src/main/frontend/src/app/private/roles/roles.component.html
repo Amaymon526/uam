@@ -1,0 +1,34 @@
+<h1>User Management</h1>
+
+<p-button label="Add user" routerLink="/project/admin/user/new"></p-button>
+
+
+<p-table [value]="roles">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Role</th>
+      <th>Beschreibung</th>
+      <th>Level</th>
+
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-roles>
+    <tr>
+      <td>{{ roles.name }}</td>
+      <td>{{ roles.description }}</td>
+      <td>{{ roles.permissionsLevel }}</td>
+
+
+      <td>
+<!--        <p-button routerLink="/project/admin/user/{{roles.id}}/edit" style="padding-right: 5px">Edit</p-button>-->
+<!--        <p-button (click)="delete(roles.id)">Delete</p-button>-->
+      </td>
+    </tr>
+
+  </ng-template>
+
+
+</p-table>
+
+

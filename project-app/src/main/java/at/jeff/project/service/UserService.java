@@ -29,6 +29,7 @@ public class UserService {
 
     public List<User> findAllUsers() {
         return Lists.newArrayList( userRepository.findAll());
-
     }
+
+
 }

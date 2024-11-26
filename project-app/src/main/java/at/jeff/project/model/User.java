@@ -1,9 +1,11 @@
 package at.jeff.project.model;
 
+import at.jeff.project.model.external.Role;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
 import java.util.UUID;
 
 @Document
@@ -15,7 +17,9 @@ public class User {
 
     private String username;
     private String email;
-    private String password;
+    private String password; //muss noch gehashed
+
+    private List<Role> role;
 
 
 }

@@ -4,13 +4,11 @@
   <form #myForm="ngForm" novalidate>
     <li><label>Username</label></li>
     <li><input required id="email" type="text" name="user.username" [(ngModel)]="user.username"></li>
-    <li><label>Name</label></li>
-    <li><input required type="text" name="user.name" [(ngModel)]="user.name"/></li>
     <li><label>Email</label></li>
     <li><input required type="email" name="email" [(ngModel)]="user.email"></li>
-    <li><label>Phone</label></li>
-    <li><input pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-               required name="phone" value="+123 " [(ngModel)]="user.phone"></li>
+
+
+
 
 <!--[disabled]="myForm.valid"-->
  <p-button  labe="Save"(click)="save()" routerLink="/project/admin/user/new">Save</p-button>

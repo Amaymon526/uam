@@ -1,170 +1,214 @@
 {
-  "openapi": "3.0.1",
-  "info": {
-    "title": "JEFF'S REST-API",
-    "description": "API zum Verwalten von Listen",
-    "contact": {
-      "name": "Jeffrey Nelwek",
-      "email": "jeff.nelwek@gmail.com"
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "WTM_UAM",
+    "description" : "API zum Verwalten User",
+    "contact" : {
+      "name" : "",
+      "email" : ""
     },
-    "license": {
-      "name": "Apache 2.0",
-      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "https://www.apache.org/licenses/LICENSE-2.0"
     },
-    "version": "v3.0"
+    "version" : "v1.0"
   },
-  "servers": [
-    {
-      "url": "http://localhost:8080/project",
-      "description": "Entwicklungssystem"
-    }
-  ],
-  "paths": {
-    "/api/user/all": {
-      "get": {
-        "operationId": "allProjects",
-        "responses": {
-          "200": {
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/User"
+  "servers" : [ {
+    "url" : "http://localhost:8080/project",
+    "description" : "Entwicklungssystem"
+  } ],
+  "paths" : {
+    "/api/admin/role" : {
+      "post" : {
+        "operationId" : "createRole",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Role"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Role"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "role-controller" ]
+      }
+    },
+    "/api/admin/role/all" : {
+      "get" : {
+        "operationId" : "getAllRoles",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Role"
                   }
                 }
               }
             },
-            "description": "OK"
+            "description" : "OK"
           }
         },
-        "tags": [
-          "user-controller"
-        ]
+        "tags" : [ "role-controller" ]
       }
     },
-    "/api/user/delete/{id}": {
-      "delete": {
-        "operationId": "deleteUser",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "*/*": {
-                "schema": {
-                  "type": "boolean"
+    "/api/user/all" : {
+      "get" : {
+        "operationId" : "allProjects",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/User"
+                  }
                 }
               }
             },
-            "description": "OK"
+            "description" : "OK"
           }
         },
-        "tags": [
-          "user-controller"
-        ]
+        "tags" : [ "user-controller" ]
       }
     },
-    "/api/user/save": {
-      "post": {
-        "operationId": "saveUser",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/User"
+    "/api/user/delete/{id}" : {
+      "delete" : {
+        "operationId" : "deleteUser",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "type" : "boolean"
+                }
+              }
+            },
+            "description" : "OK"
+          }
+        },
+        "tags" : [ "user-controller" ]
+      }
+    },
+    "/api/user/save" : {
+      "post" : {
+        "operationId" : "saveUser",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/User"
               }
             }
           },
-          "required": true
+          "required" : true
         },
-        "responses": {
-          "200": {
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/User"
                 }
               }
             },
-            "description": "OK"
+            "description" : "OK"
           }
         },
-        "tags": [
-          "user-controller"
-        ]
+        "tags" : [ "user-controller" ]
       }
     },
-    "/api/user/user/{id}": {
-      "get": {
-        "operationId": "getUser",
-        "parameters": [
-          {
-            "in": "path",
-            "name": "id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
+    "/api/user/{id}" : {
+      "get" : {
+        "operationId" : "getUser",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
           }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "*/*": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/User"
                 }
               }
             },
-            "description": "OK"
+            "description" : "OK"
           }
         },
-        "tags": [
-          "user-controller"
-        ]
+        "tags" : [ "user-controller" ]
       }
     }
   },
-  "components": {
-    "schemas": {
-      "User": {
-        "type": "object",
-        "properties": {
-          "city": {
-            "type": "string"
+  "components" : {
+    "schemas" : {
+      "Role" : {
+        "type" : "object",
+        "properties" : {
+          "description" : {
+            "type" : "string"
           },
-          "email": {
-            "type": "string"
+          "id" : {
+            "type" : "string"
           },
-          "houseNumber": {
-            "type": "string"
+          "name" : {
+            "type" : "string"
           },
-          "id": {
-            "type": "string"
+          "permissionsLevel" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      },
+      "User" : {
+        "type" : "object",
+        "properties" : {
+          "email" : {
+            "type" : "string"
           },
-          "name": {
-            "type": "string"
+          "id" : {
+            "type" : "string"
           },
-          "phone": {
-            "type": "string"
+          "password" : {
+            "type" : "string"
           },
-          "street": {
-            "type": "string"
+          "role" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Role"
+            }
           },
-          "username": {
-            "type": "string"
-          },
-          "zipCode": {
-            "type": "string"
+          "username" : {
+            "type" : "string"
           }
         }
       }

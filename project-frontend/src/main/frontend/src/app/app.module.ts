@@ -15,17 +15,16 @@ import {TableModule} from "primeng/table";
 import { HeaderComponent } from './private/admin/header/header.component';
 import { MainShopComponent } from './public/main/main-shop/main-shop.component';
 import { MainShopProductComponent } from './public/main/main-shop-product/main-shop-product.component';
-import { MainShopProductAddComponent } from './public/main/main-shop-product-add/main-shop-product-add.component';
 import {InputTextarea, InputTextareaModule} from "primeng/inputtextarea";
 import {FileUploadModule} from "primeng/fileupload";
 import { UserLoginRegisterComponent } from './public/user/user-login/user-login-register.component';
 import { UserRegisterComponent } from './public/user/user-register/user-register.component';
 import {ImageModule} from "primeng/image";
 import {CardModule} from "primeng/card";
-import { ProductAddComponent } from './private/seller/product-add/product-add.component';
 import { Component} from "@angular/core";
 import { AuthModule } from '@auth0/auth0-angular';
 import { AuthButtonComponent } from './auth-button/auth-button.component';
+import { RolesComponent } from './private/roles/roles.component';
 ;
 
 
@@ -38,11 +37,10 @@ import { AuthButtonComponent } from './auth-button/auth-button.component';
     HeaderComponent,
     MainShopComponent,
     MainShopProductComponent,
-    MainShopProductAddComponent,
     UserLoginRegisterComponent,
     UserRegisterComponent,
-    ProductAddComponent,
-    AuthButtonComponent
+    AuthButtonComponent,
+    RolesComponent
   ],
     imports: [
         BrowserModule,

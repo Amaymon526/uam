@@ -39,11 +39,11 @@ public class RestApiDocumentationConfig {
         new Server()
           .url("http://localhost:8080/project")
           .description("Entwicklungssystem")))
-      .info(new Info().title("JEFF'S REST-API")
-        .description("API zum Verwalten von Listen")
-        .version("v3.0")
+      .info(new Info().title("WTM_UAM")
+        .description("API zum Verwalten User")
+        .version("v1.0")
         .license(new License().name("Apache 2.0").url("https://www.apache.org/licenses/LICENSE-2.0"))
-      .contact(new Contact().name("Jeffrey Nelwek").email("jeff.nelwek@gmail.com")));
+      .contact(new Contact().name("").email("")));
 
   }
 
