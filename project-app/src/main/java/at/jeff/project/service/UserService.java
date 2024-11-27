@@ -1,35 +1,20 @@
 package at.jeff.project.service;
 
 import at.jeff.project.model.User;
-import at.jeff.project.repository.UserRepository;
-import com.google.common.collect.Lists;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
-@Service
-public class UserService {
-    @Autowired
-    UserRepository userRepository;
+public interface UserService {
+    User findById(String id);
 
+    User save(User user);
 
-    public User findById(String id) {
+    void delete(String id);
 
-        return userRepository.findById(id).orElse(null);
-    }
+    List<User> findAllUsers();
 
-    public User save(User user) {
-        return userRepository.save(user);
-    }
+    Optional<User> findUserByEmail(String email);
 
-    public void delete(String id) {
-        userRepository.deleteById(id);
-    }
-
-    public List<User> findAllUsers() {
-        return Lists.newArrayList( userRepository.findAll());
-    }
-
-
+    Optional<User> findUserByUsername(String username);
 }

@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.List;
 import java.util.UUID;
 
-@Document
+@Document(collection = "users")
 @Data
 public class User {
 
@@ -17,9 +17,6 @@ public class User {
 
     private String username;
     private String email;
-    private String password; //muss noch gehashed
-
+    private String password;
     private List<Role> role;
-
-
 }
