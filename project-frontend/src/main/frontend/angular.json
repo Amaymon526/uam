@@ -15,54 +15,52 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "../../../target/frontend",
+            "outputPath": "dist/frontend",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
             "styles": [
-              "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/bootstrap4-dark-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.js"
-            ]
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -71,19 +69,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "frontend:build:production"
+              "buildTarget": "frontend:build:production"
             },
             "development": {
-              "browserTarget": "frontend:build:development"
+              "buildTarget": "frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "frontend:build"
-          }
+          "builder": "@angular-devkit/build-angular:extract-i18n"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -95,10 +90,15 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
             "styles": [
+              "node_modules/primeng/resources/themes/lara-dark-orange/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -108,6 +108,6 @@
     }
   },
   "cli": {
-    "analytics": "d66b3fdb-bdc6-47bb-853e-d5dc029bb223"
+    "analytics": "8fb37182-5e01-4301-931a-3874c75c76ff"
   }
 }

@@ -1,18 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-.mat-toolbar.mat-primary {
-  border-width: 0;
+:root {
+  --accent-color: #ff9800;
+  --accent-color-hover: #e68a00;
 }
+
+
 * {
-  margin: 0;
+  font-family: 'Poppins', sans-serif;
 
+  background-color: #121212;
   color: white;
-}
-
-body {
-  background-color: #20262e;
+  padding: 0;
   margin: 0;
-
 }
-
-
-

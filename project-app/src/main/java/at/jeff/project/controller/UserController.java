@@ -42,6 +42,11 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
+    @GetMapping(value = "me")
+    public ResponseEntity<User> currentUser(@RequestParam String id) {
+        User user = userService.findById(id);
+        return ResponseEntity.ok(user);
+    }
 
 
 

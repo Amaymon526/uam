@@ -1,6 +1,7 @@
 package at.jeff.project.controller;
 
 import at.jeff.project.payload.AuthResponse;
+import at.jeff.project.payload.CurrentUserResponse;
 import at.jeff.project.payload.LoginRequest;
 import at.jeff.project.payload.RegisterRequest;
 import at.jeff.project.service.AuthService;
@@ -25,5 +26,10 @@ public class AuthController {
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest loginRequest) {
         AuthResponse response = authService.login(loginRequest);
         return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/current-user")
+    public CurrentUserResponse getCurrentUser(@RequestHeader("user-id") String userId) {
+        return authService.getCurrentUser(userId);
     }
 }
