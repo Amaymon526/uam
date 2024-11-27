@@ -3,6 +3,8 @@ package at.jeff.project.repository;
 import at.jeff.project.model.external.Role;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface RoleRepository extends MongoRepository<Role, String> {
+import java.util.Optional;
 
+public interface RoleRepository extends MongoRepository<Role, String> {
+    Optional<Role> findByName(String name);
 }
