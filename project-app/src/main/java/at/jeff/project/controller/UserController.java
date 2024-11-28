@@ -21,7 +21,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping(value = "all")
-    public ResponseEntity<List<User>> allProjects() {
+    public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.ok(userService.findAllUsers());
     }
 

@@ -165,7 +165,7 @@
     },
     "/api/user/all": {
       "get": {
-        "operationId": "allProjects",
+        "operationId": "getAllUsers",
         "responses": {
           "200": {
             "content": {

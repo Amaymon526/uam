@@ -3,7 +3,7 @@
 
   <div class="nav-container">
     <nav>
-      <a *ngIf="hasRole('admin')" href="#">User</a>
+      <a *ngIf="hasRole('admin')" routerLink="/user">User</a>
       <a *ngIf="hasRole('admin')" href="#">Roles</a>
       <a *ngIf="hasRole('admin')" href="#">Project</a>
     </nav>
@@ -14,4 +14,5 @@
     <a *ngIf="!currentUser" routerLink="/register">Register</a>
     <a *ngIf="currentUser" href="#">User Settings</a>
   </div>
+
 </header>

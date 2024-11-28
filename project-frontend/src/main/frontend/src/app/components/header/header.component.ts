@@ -5,6 +5,7 @@ import {ButtonModule} from 'primeng/button';
 import {NgClass, NgIf} from '@angular/common';
 import {CurrentUserService} from '../../services/current-user.service';
 import {Role, User} from '../../generated/rest/project';
+import {DataRowOutlet} from '@angular/cdk/table';
 
 @Component({
   selector: 'app-header',
