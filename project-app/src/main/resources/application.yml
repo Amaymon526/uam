@@ -61,4 +61,4 @@ springdoc:
 
 roles:
   check:
-    enabled=true:true
+    enabled=true

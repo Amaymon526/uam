@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { AuthControllerService, AuthResponse, LoginRequest, CurrentUserResponse } from '../../generated/rest/project';
-import {SpinnerComponent} from '../../spinner/spinner.component';
+import { AuthControllerService, AuthResponse, LoginRequest, CurrentUserResponse } from '../../../generated/rest/project';
+import {SpinnerComponent} from '../../../components/spinner/spinner.component';
 import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
 
@@ -28,6 +28,12 @@ export class LoginComponent {
     private cookieService: CookieService,
     private router: Router
   ) {}
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 250); }
+
 
   onLogin(): void {
     this.isLoading = true;

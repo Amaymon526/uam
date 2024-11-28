@@ -2,12 +2,14 @@ package at.jeff.project.config;
 
 import at.jeff.project.model.external.Role;
 import at.jeff.project.repository.RoleRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.Optional;
 
+@Slf4j
 @Component
 public class RoleSeeder {
 
@@ -40,7 +42,7 @@ public class RoleSeeder {
             newRole.setDescription(description);
             newRole.setPermissionsLevel(level);
             roleRepository.save(newRole);
-            System.out.println("Rolle erstellt: " + roleName + " (Level: " + level + ")");
+            log.info("Rolle erstellt: " + roleName + " (Level: " + level + ")");
         }
     }
 }

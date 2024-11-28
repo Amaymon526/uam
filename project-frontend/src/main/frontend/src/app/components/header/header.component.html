@@ -1,0 +1,17 @@
+<header>
+  <div class="logo">User Management</div>
+
+  <div class="nav-container">
+    <nav>
+      <a *ngIf="hasRole('admin')" href="#">User</a>
+      <a *ngIf="hasRole('admin')" href="#">Roles</a>
+      <a *ngIf="hasRole('admin')" href="#">Project</a>
+    </nav>
+  </div>
+
+  <div class="actions">
+    <a *ngIf="!currentUser" routerLink="/login">Login</a>
+    <a *ngIf="!currentUser" routerLink="/register">Register</a>
+    <a *ngIf="currentUser" href="#">User Settings</a>
+  </div>
+</header>

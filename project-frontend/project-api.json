@@ -1,375 +1,405 @@
 {
-  "openapi" : "3.0.1",
-  "info" : {
-    "title" : "WTM_UAM",
-    "description" : "API zum Verwalten User",
-    "contact" : {
-      "name" : "",
-      "email" : ""
+  "openapi": "3.0.1",
+  "info": {
+    "title": "WTM_UAM",
+    "description": "API zum Verwalten User",
+    "contact": {
+      "name": "",
+      "email": ""
     },
-    "license" : {
-      "name" : "Apache 2.0",
-      "url" : "https://www.apache.org/licenses/LICENSE-2.0"
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
     },
-    "version" : "v1.0"
+    "version": "v1.0"
   },
-  "servers" : [ {
-    "url" : "http://localhost:8080/project",
-    "description" : "Entwicklungssystem"
-  } ],
-  "paths" : {
-    "/api/admin/role" : {
-      "post" : {
-        "operationId" : "saveRole",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/Role"
+  "servers": [
+    {
+      "url": "http://localhost:8080/project",
+      "description": "Entwicklungssystem"
+    }
+  ],
+  "paths": {
+    "/api/admin/role": {
+      "post": {
+        "operationId": "saveRole",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Role"
               }
             }
           },
-          "required" : true
+          "required": true
         },
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/Role"
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Role"
                 }
               }
             },
-            "description" : "OK"
+            "description": "OK"
           }
         },
-        "tags" : [ "role-controller" ]
+        "tags": [
+          "role-controller"
+        ]
       }
     },
-    "/api/admin/role/all" : {
-      "get" : {
-        "operationId" : "getAllRoles",
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/Role"
+    "/api/admin/role/all": {
+      "get": {
+        "operationId": "getAllRoles",
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Role"
                   }
                 }
               }
             },
-            "description" : "OK"
+            "description": "OK"
           }
         },
-        "tags" : [ "role-controller" ]
+        "tags": [
+          "role-controller"
+        ]
       }
     },
-    "/api/auth/current-user" : {
-      "get" : {
-        "operationId" : "getCurrentUser",
-        "parameters" : [ {
-          "in" : "header",
-          "name" : "user-id",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
+    "/api/auth/current-user": {
+      "get": {
+        "operationId": "getCurrentUser",
+        "parameters": [
+          {
+            "in": "header",
+            "name": "user-id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/CurrentUserResponse"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/CurrentUserResponse"
                 }
               }
             },
-            "description" : "OK"
+            "description": "OK"
           }
         },
-        "tags" : [ "auth-controller" ]
+        "tags": [
+          "auth-controller"
+        ]
       }
     },
-    "/api/auth/login" : {
-      "post" : {
-        "operationId" : "login",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/LoginRequest"
+    "/api/auth/login": {
+      "post": {
+        "operationId": "login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
               }
             }
           },
-          "required" : true
+          "required": true
         },
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/AuthResponse"
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
                 }
               }
             },
-            "description" : "OK"
+            "description": "OK"
           }
         },
-        "tags" : [ "auth-controller" ]
+        "tags": [
+          "auth-controller"
+        ]
       }
     },
-    "/api/auth/register" : {
-      "post" : {
-        "operationId" : "register",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/RegisterRequest"
+    "/api/auth/register": {
+      "post": {
+        "operationId": "register",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
               }
             }
           },
-          "required" : true
+          "required": true
         },
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/AuthResponse"
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
                 }
               }
             },
-            "description" : "OK"
+            "description": "OK"
           }
         },
-        "tags" : [ "auth-controller" ]
+        "tags": [
+          "auth-controller"
+        ]
       }
     },
-    "/api/user/all" : {
-      "get" : {
-        "operationId" : "allProjects",
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "type" : "array",
-                  "items" : {
-                    "$ref" : "#/components/schemas/User"
+    "/api/user/all": {
+      "get": {
+        "operationId": "allProjects",
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/User"
                   }
                 }
               }
             },
-            "description" : "OK"
+            "description": "OK"
           }
         },
-        "tags" : [ "user-controller" ]
+        "tags": [
+          "user-controller"
+        ]
       }
     },
-    "/api/user/delete/{id}" : {
-      "delete" : {
-        "operationId" : "deleteUser",
-        "parameters" : [ {
-          "in" : "path",
-          "name" : "id",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
+    "/api/user/delete/{id}": {
+      "delete": {
+        "operationId": "deleteUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "type" : "boolean"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "boolean"
                 }
               }
             },
-            "description" : "OK"
+            "description": "OK"
           }
         },
-        "tags" : [ "user-controller" ]
+        "tags": [
+          "user-controller"
+        ]
       }
     },
-    "/api/user/me" : {
-      "get" : {
-        "operationId" : "currentUser",
-        "parameters" : [ {
-          "in" : "query",
-          "name" : "id",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
+    "/api/user/me": {
+      "get": {
+        "operationId": "currentUser",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/User"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
                 }
               }
             },
-            "description" : "OK"
+            "description": "OK"
           }
         },
-        "tags" : [ "user-controller" ]
+        "tags": [
+          "user-controller"
+        ]
       }
     },
-    "/api/user/save" : {
-      "post" : {
-        "operationId" : "saveUser",
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/User"
+    "/api/user/save": {
+      "post": {
+        "operationId": "saveUser",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
               }
             }
           },
-          "required" : true
+          "required": true
         },
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/User"
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
                 }
               }
             },
-            "description" : "OK"
+            "description": "OK"
           }
         },
-        "tags" : [ "user-controller" ]
+        "tags": [
+          "user-controller"
+        ]
       }
     },
-    "/api/user/{id}" : {
-      "get" : {
-        "operationId" : "getUser",
-        "parameters" : [ {
-          "in" : "path",
-          "name" : "id",
-          "required" : true,
-          "schema" : {
-            "type" : "string"
+    "/api/user/{id}": {
+      "get": {
+        "operationId": "getUser",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
-        } ],
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/User"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
                 }
               }
             },
-            "description" : "OK"
+            "description": "OK"
           }
         },
-        "tags" : [ "user-controller" ]
+        "tags": [
+          "user-controller"
+        ]
       }
     }
   },
-  "components" : {
-    "schemas" : {
-      "AuthResponse" : {
-        "type" : "object",
-        "properties" : {
-          "message" : {
-            "type" : "string"
+  "components": {
+    "schemas": {
+      "AuthResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
           },
-          "success" : {
-            "type" : "boolean"
+          "success": {
+            "type": "boolean"
           },
-          "token" : {
-            "type" : "string"
+          "token": {
+            "type": "string"
           },
-          "userId" : {
-            "type" : "string"
+          "userId": {
+            "type": "string"
           }
         }
       },
-      "CurrentUserResponse" : {
-        "type" : "object",
-        "properties" : {
-          "userId" : {
-            "type" : "string"
+      "CurrentUserResponse": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
           },
-          "username" : {
-            "type" : "string"
+          "username": {
+            "type": "string"
           }
         }
       },
-      "LoginRequest" : {
-        "type" : "object",
-        "properties" : {
-          "email" : {
-            "type" : "string"
+      "LoginRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
           },
-          "password" : {
-            "type" : "string"
+          "password": {
+            "type": "string"
           }
         }
       },
-      "RegisterRequest" : {
-        "type" : "object",
-        "properties" : {
-          "email" : {
-            "type" : "string"
+      "RegisterRequest": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
           },
-          "password" : {
-            "type" : "string"
+          "password": {
+            "type": "string"
           },
-          "username" : {
-            "type" : "string"
+          "username": {
+            "type": "string"
           }
         }
       },
-      "Role" : {
-        "type" : "object",
-        "properties" : {
-          "description" : {
-            "type" : "string"
+      "Role": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
           },
-          "id" : {
-            "type" : "string"
+          "id": {
+            "type": "string"
           },
-          "name" : {
-            "type" : "string"
+          "name": {
+            "type": "string"
           },
-          "permissionsLevel" : {
-            "type" : "integer",
-            "format" : "int32"
+          "permissionsLevel": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
-      "User" : {
-        "type" : "object",
-        "properties" : {
-          "email" : {
-            "type" : "string"
+      "User": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
           },
-          "id" : {
-            "type" : "string"
+          "id": {
+            "type": "string"
           },
-          "password" : {
-            "type" : "string"
+          "password": {
+            "type": "string"
           },
-          "role" : {
-            "type" : "array",
-            "items" : {
-              "$ref" : "#/components/schemas/Role"
+          "role": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Role"
             }
           },
-          "username" : {
-            "type" : "string"
+          "username": {
+            "type": "string"
           }
         }
       }

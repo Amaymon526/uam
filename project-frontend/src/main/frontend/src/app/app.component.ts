@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import {RouterModule, RouterOutlet} from '@angular/router';
-import {HeaderComponent} from './header/header.component';
+import {HeaderComponent} from './components/header/header.component';
 import { MenubarModule } from 'primeng/menubar';
-import {SpinnerComponent} from './spinner/spinner.component';
-import {LoadingService} from './loading.service';
+import {SpinnerComponent} from './components/spinner/spinner.component';
+import {LoadingService} from './services/loading.service';
 import {Observable, of} from 'rxjs';
 import {AsyncPipe} from '@angular/common';
 

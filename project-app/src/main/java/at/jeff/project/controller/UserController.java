@@ -4,10 +4,12 @@ import at.jeff.project.model.User;
 import at.jeff.project.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @Slf4j
@@ -44,9 +46,17 @@ public class UserController {
 
     @GetMapping(value = "me")
     public ResponseEntity<User> currentUser(@RequestParam String id) {
-        User user = userService.findById(id);
-        return ResponseEntity.ok(user);
+        if (id != null) {
+            User user = userService.findById(id);
+            user.setPassword(null);
+            return ResponseEntity.ok(user);
+        } else {
+            log.error("User id is null");
+        }
+        return null;
     }
+
+
 
 
 
