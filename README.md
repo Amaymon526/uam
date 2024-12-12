@@ -15,11 +15,14 @@
 
 <h3>ToDo</h3>
 <li>
-  TenantList (ToDo)
+  TenantList
 </li>
 <li>
-  ModelBuilder (ToDo)
+  ModelBuilder
 </li>
 <li>
-  Swagger einbindung (ToDo)
+  Swagger einbindung
+</li>
+<li>
+  UserSettings
 </li>
