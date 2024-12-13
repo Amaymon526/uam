@@ -63,3 +63,30 @@
     }
   }
 }
+
+/* Username */
+#username{
+  width:390px;
+}
+
+/* Email */
+#email{
+  width:390px;
+}
+
+/* Password */
+#password{
+  width:390px;
+}
+
+/* Button */
+.auth-container .ng-untouched button{
+  width:408px !important;
+  margin-right:0px;
+  margin-top:8px;
+}
+
+/* Form Division */
+.content app-register form{
+  margin-right:112px;
+}

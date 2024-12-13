@@ -19,7 +19,7 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     private UserRepository userRepository;
 
-    private final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Override
     public AuthResponse register(RegisterRequest registerRequest) {

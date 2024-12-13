@@ -2,26 +2,38 @@
   <h2>Benutzerverwaltung</h2>
   <button class="btn-create" (click)="onCreateUser()">Neuen Benutzer erstellen</button>
 
-  <table class="user-table">
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Benutzername</th>
-      <th>E-Mail</th>
-      <th>Aktionen</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let user of users">
-      <td>{{ user.id }}</td>
-      <td>{{ user.username }}</td>
-      <td>{{ user.email }}</td>
-      <td>
-        <button class="btn-edit" *ngIf="user.id" (click)="onEditUser(user.id)">Bearbeiten</button>
-        <button class="btn-delete" *ngIf="user.id" (click)="onDeleteUser(user.id)">Löschen</button>
-
-      </td>
-    </tr>
-    </tbody>
-  </table>
+  <p-table
+    [value]="users"
+    [paginator]="true"
+    [rows]="10"
+    [rowsPerPageOptions]="[10, 20, 50]"
+    [responsiveLayout]="'scroll'"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Benutzername</th>
+        <th>E-Mail</th>
+        <th>Aktionen</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <p-button class="btn-edit" *ngIf="user.id" (click)="onEditUser(user.id)">Bearbeiten</p-button>
+          <p-button class="btn-delete" *ngIf="user.id" (click)="onDeleteUser(user.id)">Löschen</p-button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="4">Keine Benutzer gefunden.</td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>
+
+
