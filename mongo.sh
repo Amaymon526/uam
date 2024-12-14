@@ -1,1 +1,1 @@
-   docker run -d -p 27017:27017 --name wtm mongo
+   docker run -d -p 27017:27017 --name wtm6 mongo

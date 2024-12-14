@@ -55,7 +55,6 @@ public class AuthServiceImpl implements AuthService {
             return new AuthResponse(false, "Ungültige Anmeldeinformationen", null, null);
         }
 
-        // Erfolgreicher Login
         return new AuthResponse(true, "Erfolgreich eingeloggt", null, user.get().getId());
 
     }

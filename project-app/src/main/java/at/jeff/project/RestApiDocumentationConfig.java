@@ -37,7 +37,7 @@ public class RestApiDocumentationConfig {
 //      )
       .servers(Lists.newArrayList(
         new Server()
-          .url("http://localhost:8080/project")
+          .url("http://localhost:8181/project")
           .description("Entwicklungssystem")))
       .info(new Info().title("WTM_UAM")
         .description("API zum Verwalten User")
@@ -50,7 +50,7 @@ public class RestApiDocumentationConfig {
   @Bean
   public GroupedOpenApi adminApi() {
     return GroupedOpenApi.builder()
-      .group("project-api")
+      .group("uam")
       .pathsToMatch("/api/**")
       .build();
   }

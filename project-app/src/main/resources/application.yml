@@ -1,9 +1,9 @@
 server:
-  port: 8080
+  port: 8181
   host: localhost
   server.forward-headers-strategy: true
   servlet:
-    context-path: /project
+    context-path: /uam
   tomcat:
     max-http-post-size: 600000000
     max-swallow-size: 600000000
@@ -17,9 +17,8 @@ spring:
     name: PROJECT
   data:
     mongodb:
+      uri: mongodb+srv://admin2:tpDnFOgfmboCoKDl@uam.47vdt.mongodb.net/uam
       auto-index-creation: true
-      database: wtm
-      port: 27017
   jackson:
     deserialization:
       fail-on-unknown-properties: false
@@ -55,7 +54,7 @@ springdoc:
     showExtensions: true
     showCommonExtensions: true
     path: /swagger-ui.html
-#  use-fqn: true
+  #  use-fqn: true
   writer-with-default-pretty-printer: true
   writer-with-order-by-keys: true
 
