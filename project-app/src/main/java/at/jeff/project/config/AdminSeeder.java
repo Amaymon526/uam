@@ -39,7 +39,11 @@ public class AdminSeeder {
             return;
         }
 
+        log.info( "\n\n" +"////////////////// ADMIN_SEEDER //////////////////" + "\n\n\n");
+
         createAdminUserIfNotExists("admin", "admin", "123", adminRole.get());
+
+        log.info( "\n\n" +"///////////////////////////////////////////////////" + "\n\n\n");
     }
 
     private void createAdminUserIfNotExists(String username, String email, String password, Role adminRole) {
