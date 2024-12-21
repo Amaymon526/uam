@@ -1,3 +1,8 @@
+* {
+  overflow-y: hidden;
+}
+
+
 /* Table Data */
 p-table tr td{
   text-align:center;
@@ -59,7 +64,24 @@ p-table tr th{
 }
 
 /* Paginator bottom */
-p-table .p-element .p-paginator-bottom{
+.p-table .p-element .p-paginator-bottom{
   padding-top:19px;
+}
+
+
+
+/* Body */
+body{
+  min-height:335px;
+}
+
+/* Table Data */
+.p-table tr td{
+  padding-bottom:8px;
+  min-height:25px;
+  height:25px;
+  transform:translatex(0px) translatey(6px);
+  padding-top:13px;
+
 }
 
