@@ -1,6 +1,6 @@
 package at.jeff.project.service;
 
-import at.jeff.project.model.User;
+import at.jeff.project.model.user.User;
 import at.jeff.project.repository.UserRepository;
 import com.google.common.collect.Lists;
 import org.springframework.beans.factory.annotation.Autowired;

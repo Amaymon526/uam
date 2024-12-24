@@ -1,6 +1,6 @@
 package at.jeff.project.service;
 
-import at.jeff.project.model.User;
+import at.jeff.project.model.user.User;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,6 +1,6 @@
-package at.jeff.project.model;
+package at.jeff.project.model.user;
 
-import at.jeff.project.model.external.Role;
+import de.codecentric.boot.admin.client.registration.Application;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -19,5 +19,6 @@ public class User {
     private String email;
     private String password;
     private List<Role> role;
+    private Application application; // active Application for user
 
 }

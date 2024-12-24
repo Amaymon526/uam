@@ -1,6 +1,6 @@
 package at.jeff.project.service;
 
-import at.jeff.project.model.external.Role;
+import at.jeff.project.model.user.Role;
 import at.jeff.project.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

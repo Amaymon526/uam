@@ -1,6 +1,6 @@
 package at.jeff.project.controller;
 
-import at.jeff.project.model.external.Role;
+import at.jeff.project.model.user.Role;
 import at.jeff.project.service.RoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

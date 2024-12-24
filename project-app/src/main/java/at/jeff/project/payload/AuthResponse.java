@@ -1,6 +1,5 @@
 package at.jeff.project.payload;
 
-import at.jeff.project.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

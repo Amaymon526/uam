@@ -1,7 +1,7 @@
 package at.jeff.project.config;
 
-import at.jeff.project.model.User;
-import at.jeff.project.model.external.Role;
+import at.jeff.project.model.user.User;
+import at.jeff.project.model.user.Role;
 import at.jeff.project.repository.UserRepository;
 import at.jeff.project.repository.RoleRepository;
 import lombok.extern.slf4j.Slf4j;

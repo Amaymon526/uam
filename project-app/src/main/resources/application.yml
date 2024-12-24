@@ -17,6 +17,7 @@ spring:
     name: PROJECT
   data:
     mongodb:
+#      uri: mongodb+srv://admin2:tpDnFOgfmboCoKDl@uam.47vdt.mongodb.net/uam
       uri: mongodb+srv://admin2:tpDnFOgfmboCoKDl@uam.47vdt.mongodb.net/uam
       auto-index-creation: true
   jackson:

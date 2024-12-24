@@ -1,6 +1,6 @@
 package at.jeff.project.repository;
 
-import at.jeff.project.model.User;
+import at.jeff.project.model.user.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

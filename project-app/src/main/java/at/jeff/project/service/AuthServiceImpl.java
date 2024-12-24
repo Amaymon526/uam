@@ -1,6 +1,6 @@
 package at.jeff.project.service;
 
-import at.jeff.project.model.User;
+import at.jeff.project.model.user.User;
 import at.jeff.project.payload.AuthResponse;
 import at.jeff.project.payload.CurrentUserResponse;
 import at.jeff.project.payload.LoginRequest;
@@ -8,7 +8,6 @@ import at.jeff.project.payload.RegisterRequest;
 import at.jeff.project.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

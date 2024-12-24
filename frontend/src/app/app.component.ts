@@ -9,14 +9,16 @@ import {Menubar} from "primeng/menubar";
 import {Ripple} from "primeng/ripple";
 import {MenuItem} from "primeng/api";
 import {NgClass} from "@angular/common";
+import {UserListComponent} from './admin/user/user-list/user-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Button, HeaderComponent,],
+  imports: [RouterOutlet, HeaderComponent, UserListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
+  title = "uam"
   items: MenuItem[] | undefined;
 
   ngOnInit() {

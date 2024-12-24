@@ -279,6 +279,29 @@
   },
   "components" : {
     "schemas" : {
+      "Application" : {
+        "type" : "object",
+        "properties" : {
+          "healthUrl" : {
+            "type" : "string"
+          },
+          "managementUrl" : {
+            "type" : "string"
+          },
+          "metadata" : {
+            "type" : "object",
+            "additionalProperties" : {
+              "type" : "string"
+            }
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "serviceUrl" : {
+            "type" : "string"
+          }
+        }
+      },
       "AuthResponse" : {
         "type" : "object",
         "properties" : {
@@ -353,6 +376,9 @@
       "User" : {
         "type" : "object",
         "properties" : {
+          "application" : {
+            "$ref" : "#/components/schemas/Application"
+          },
           "email" : {
             "type" : "string"
           },

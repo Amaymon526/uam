@@ -1,14 +1,15 @@
-package at.jeff.project.model.external;
+package at.jeff.project.model.user;
 
 import lombok.Data;
 import nonapi.io.github.classgraph.json.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
 import java.util.UUID;
 
 @Document
 @Data
-public class Role {
+public class Applications {
 
     @Id
     private String id = UUID.randomUUID().toString();
@@ -17,6 +18,9 @@ public class Role {
 
     private String description;
 
-    private int permissionsLevel;
+    private String routingLink;
 
+    private List<Tags> tags;
+
+    private List<Role> requierdRoles;
 }
