@@ -18,7 +18,8 @@ spring:
   data:
     mongodb:
 #      uri: mongodb+srv://admin2:tpDnFOgfmboCoKDl@uam.47vdt.mongodb.net/uam
-      uri: mongodb+srv://admin2:tpDnFOgfmboCoKDl@uam.47vdt.mongodb.net/uam
+#     uri: mongodb+srv://admin2:tpDnFOgfmboCoKDl@uam.47vdt.mongodb.net/uam
+      uri: mongodb://49.13.93.199:27017/uam-test
       auto-index-creation: true
   jackson:
     deserialization:
@@ -55,6 +56,7 @@ springdoc:
     showExtensions: true
     showCommonExtensions: true
     path: /swagger-ui.html
+    default-produces: application/json
   #  use-fqn: true
   writer-with-default-pretty-printer: true
   writer-with-order-by-keys: true
@@ -65,4 +67,4 @@ roles:
 
 adminUser:
   check:
-    enabled:true
+    enabled=false

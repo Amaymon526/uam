@@ -19,13 +19,13 @@ public class RoleController {
         this.roleService = roleService;
     }
 
-    @PostMapping
+    @PostMapping(value = "/save", produces = "application/json")
     public ResponseEntity<Role> saveRole(@RequestBody Role role) {
         Role newRole = roleService.save(role);
         return ResponseEntity.ok().body(newRole);
     }
 
-    @GetMapping("/all")
+    @GetMapping(value = "/all", produces = "application/json")
     public ResponseEntity<List<Role>> getAllRoles() {
         return ResponseEntity.ok(roleService.findAllRoles());
     }

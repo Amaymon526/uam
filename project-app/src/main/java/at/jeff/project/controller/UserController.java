@@ -14,7 +14,6 @@ import java.util.List;
 @RequestMapping("/api/user/")
 public class UserController {
 
-
     @Autowired
     private UserService userService;
 
@@ -23,25 +22,25 @@ public class UserController {
         return ResponseEntity.ok(userService.findAllUsers());
     }
 
-    @PostMapping(value = "save")
+    @PostMapping(value = "save", produces = "application/json")
     public ResponseEntity<User> saveUser(@RequestBody User user) {
         User userNew = userService.save(user);
         return ResponseEntity.ok(user);
     }
 
-    @DeleteMapping(value = "delete/{id}")
+    @DeleteMapping(value = "delete/{id}", produces = "application/json")
     public ResponseEntity<Boolean> deleteUser(@PathVariable String id) {
         userService.delete(id);
         return ResponseEntity.ok(true);
     }
 
-    @GetMapping(value = "{id}")
+    @GetMapping(value = "{id}",  produces = "application/json")
     public ResponseEntity<User> getUser(@PathVariable String id) {
         User user = userService.findById(id);
         return ResponseEntity.ok(user);
     }
 
-    @GetMapping(value = "me")
+    @GetMapping(value = "me",  produces = "application/json")
     public ResponseEntity<User> currentUser(@RequestParam String id) {
         if (id != null) {
             User user = userService.findById(id);
@@ -52,9 +51,5 @@ public class UserController {
         }
         return null;
     }
-
-
-
-
 
 }

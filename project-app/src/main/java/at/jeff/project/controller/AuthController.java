@@ -16,19 +16,19 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
-    @PostMapping("/register")
+    @PostMapping(value = "/register", produces = "application/json")
     public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest registerRequest) {
         AuthResponse response = authService.register(registerRequest);
         return ResponseEntity.ok(response);
     }
 
-    @PostMapping("/login")
+    @PostMapping(value = "/login", produces = "application/json")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest loginRequest) {
         AuthResponse response = authService.login(loginRequest);
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/current-user")
+    @GetMapping(value = "/current-user", produces = "application/json")
     public CurrentUserResponse getCurrentUser(@RequestHeader("user-id") String userId) {
         return authService.getCurrentUser(userId);
     }

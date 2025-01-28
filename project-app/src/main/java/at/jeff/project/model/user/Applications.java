@@ -1,7 +1,7 @@
 package at.jeff.project.model.user;
 
 import lombok.Data;
-import nonapi.io.github.classgraph.json.Id;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.UUID;
 public class Applications {
 
     @Id
-    private String id = UUID.randomUUID().toString();
+    private String id;
 
     private String name;
 
