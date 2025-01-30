@@ -29,4 +29,9 @@ public class RoleController {
     public ResponseEntity<List<Role>> getAllRoles() {
         return ResponseEntity.ok(roleService.findAllRoles());
     }
+
+    @DeleteMapping("/delete")
+    public void deleteRole(@RequestBody Role role) {
+        roleService.delete(role);
+    }
 }

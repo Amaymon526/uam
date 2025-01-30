@@ -28,10 +28,9 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
 
-    @DeleteMapping(value = "delete/{id}", produces = "application/json")
-    public ResponseEntity<Boolean> deleteUser(@PathVariable String id) {
+    @DeleteMapping(value = "delete/{id}")
+    public void deleteUser(@PathVariable String id) {
         userService.delete(id);
-        return ResponseEntity.ok(true);
     }
 
     @GetMapping(value = "{id}",  produces = "application/json")

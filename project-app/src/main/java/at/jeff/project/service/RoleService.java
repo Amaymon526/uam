@@ -7,5 +7,7 @@ public interface RoleService {
 
     Role save(Role role);
 
-    List<Role> findAllRoles(); // Korrektur des Methodennamens
+    List<Role> findAllRoles();
+
+    void delete(Role role);
 }
