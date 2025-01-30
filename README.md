@@ -10,6 +10,9 @@
   RoleList
 </li>
 <li>
+  Applications List
+</li>
+<li>
   Login/Register
 </li>
 
@@ -19,9 +22,6 @@
 </li>
 <li>
   ModelBuilder
-</li>
-<li>
-  Swagger einbindung
 </li>
 <li>
   UserSettings
