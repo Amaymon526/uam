@@ -75,7 +75,7 @@ export class RevenueStreamWidget {
             plugins: {
                 legend: {
                     labels: {
-                        color: textColor
+                        color: 'white'
                     }
                 }
             },
