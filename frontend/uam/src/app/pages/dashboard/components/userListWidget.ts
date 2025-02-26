@@ -3,17 +3,18 @@ import { CommonModule } from '@angular/common';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
+import { TagModule } from 'primeng/tag';
 
 interface User {
     image: string;
     name: string;
-    status: string;
+    status: 'Aktiv' | 'Inaktiv';
 }
 
 @Component({
     standalone: true,
-    selector: 'app-recent-sales-widget',
-    imports: [CommonModule, TableModule, ButtonModule, RippleModule],
+    selector: 'app-user-list-widget',
+    imports: [CommonModule, TableModule, ButtonModule, RippleModule, TagModule],
     template: `<div class="card !mb-8">
         <div class="font-semibold text-xl mb-4">Benutzer Liste Simple</div>
         <p-table [value]="users" [paginator]="true" [rows]="5" responsiveLayout="scroll">
@@ -31,7 +32,9 @@ interface User {
                         <img [src]="user.image" class="shadow-lg" width="50" />
                     </td>
                     <td style="width: 35%; min-width: 7rem;">{{ user.name }}</td>
-                    <td style="width: 35%; min-width: 8rem;">{{ user.status }}</td>
+                    <td style="width: 35%; min-width: 8rem;">
+                        <p-tag [severity]="getStatusSeverity(user.status)" [value]="user.status"></p-tag>
+                    </td>
                     <td style="width: 15%;">
                         <button pButton pRipple type="button" icon="pi pi-user" class="p-button p-component p-button-text p-button-icon-only"></button>
                     </td>
@@ -48,4 +51,8 @@ export class UserListWidget {
         { image: 'https://via.placeholder.com/50', name: 'Lisa Berger', status: 'Inaktiv' },
         { image: 'https://via.placeholder.com/50', name: 'Peter Meier', status: 'Aktiv' }
     ];
+
+    getStatusSeverity(status: string): "success" | "secondary" | "info" | "warn" | "danger" | "contrast" | undefined {
+        return status === 'Aktiv' ? 'success' : 'secondary';
+    }
 }
